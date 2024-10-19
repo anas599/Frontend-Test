@@ -1,7 +1,7 @@
 .container{
     height: 80vh;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -50,6 +50,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin: 0.5rem;
     border: 1px solid #ccc;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -65,14 +66,51 @@
             color: white;
             cursor: pointer;
 }
-
+.container .editBtn {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff9100;
+    color: white;
+    cursor: pointer;
+}
+.container .editBtn:hover {
+    background-color: #ff6a00;
+}
 .container .rmvBtn:hover {
     background-color: #c82333;
+}
+.container .saveBtn {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+.container .saveBtn:hover {
+    background-color: #218838;
+}
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #f8d7da;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* responsive design for mobile screens */
 @media (max-width: 600px) {
     .container {
         padding: 10px;
+        margin: 1rem;
     }
 
         .inputBar {
@@ -80,13 +118,14 @@
     }
 
     .addBtn {
-        width: 1rem;
-        margin: 5px 0;
+        /* width: 1rem; */
+        margin: 5px ;
     }
 
     .container li {
         flex-direction: row;
         align-items: flex-start;
+        margin: 0.3rem;
     }
 
     .container li .addBtn {
