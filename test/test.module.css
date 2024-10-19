@@ -69,7 +69,7 @@
 .container .rmvBtn:hover {
     background-color: #c82333;
 }
-
+/* responsive design for mobile screens */
 @media (max-width: 600px) {
     .container {
         padding: 10px;

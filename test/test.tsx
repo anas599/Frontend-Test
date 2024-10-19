@@ -6,19 +6,20 @@ import { useState } from "react";
 
 export default function Test(): JSX.Element {
   // Your Test Starts Here
-  const [todos, setTodos] = useState<string[]>([]);
-  const [inputValue, setInputValue] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [todos, setTodos] = useState<string[]>([]); //state variable to store the list of todos
+  const [inputValue, setInputValue] = useState<string>("");//state variable to store the input value
+  const [error, setError] = useState<string>("");//state variable to store the error message
 
   const addTodo = () => {
-    if (inputValue.trim()) {
+    if (inputValue.trim()) {//trim the input value to remove any leading or trailing white spaces
       setTodos([...todos, inputValue]);
       setInputValue("");
-      setError(""); // Clear error message
+      setError(""); // Clear error message when input is valid
     } else {
-      setError("Please enter at least one letter."); // Set error message
+      setError("Please enter at least one letter."); // Set error message when input is invalid
     }
   };
+  //use filter method to remove the todo item at the given index from the todos array
   const removeTodo = (index: number) => {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos);
@@ -28,6 +29,7 @@ export default function Test(): JSX.Element {
     <div className={styles.container}>
       <h1 className={styles.h1Text}>To-Do List</h1>
       <div className={styles.topContainer}>
+        {/* input and add button to add new todo item */}
         <input
           className={styles.inputBar}
           type="text"
@@ -39,11 +41,14 @@ export default function Test(): JSX.Element {
           Add
         </button>
       </div>
-      {error && <p className={styles.error}>{error}</p>}
+      {/* display error message if input is invalid */}
+      {error && <p className={styles.error}>{error}</p>} 
       <ul>
+      {/* map through the todos array to display the list of todos */}
         {todos.map((todo, index) => (
           <li key={index}>
             {todo}
+            {/* remove button with every todo item */}
             <button className={styles.rmvBtn} onClick={() => removeTodo(index)}>
               Remove
             </button>
