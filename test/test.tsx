@@ -25,23 +25,28 @@ export default function Test(): JSX.Element {
   };
 
   return (
-    <div>
-      <h1>To-Do List</h1>
-      <div>
+    <div className={styles.container}>
+      <h1 className={styles.h1Text}>To-Do List</h1>
+      <div className={styles.topContainer}>
         <input
+          className={styles.inputBar}
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Add a new to-do item"
         />
-        <button onClick={addTodo}>Add</button>
+        <button className={styles.addBtn} onClick={addTodo}>
+          Add
+        </button>
       </div>
-      {error && <p>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
             {todo}
-            <button onClick={() => removeTodo(index)}>Remove</button>
+            <button className={styles.rmvBtn} onClick={() => removeTodo(index)}>
+              Remove
+            </button>
           </li>
         ))}
       </ul>

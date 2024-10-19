@@ -1,4 +1,96 @@
 .container{
     height: 80vh;
-    background-color: aliceblue;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.container h1 {
+    text-align: center;
+    color: #333;
+}
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.inputBar {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.addBtn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: #0056b3;
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-left:solid 1px #ff000000
+}
+
+.container .rmvBtn {
+             padding: 5px 10px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #e61a2e;
+            color: white;
+            cursor: pointer;
+}
+
+.container .rmvBtn:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+        .inputBar {
+        width: calc(100% - 20px);
+    }
+
+    .addBtn {
+        width: 1rem;
+        margin: 5px 0;
+    }
+
+    .container li {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .container li .addBtn {
+        width: 100%;
+        margin-top: 5px;
+    }
 }
